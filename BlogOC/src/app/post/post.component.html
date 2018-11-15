@@ -1,0 +1,17 @@
+
+<li [ngClass]="{'list-group-item' : true,'list-group-item-success' :getColor() === 'green','list-group-item-danger' :getColor() === 'red'}">
+    <div class="inline">
+        <h4>{{posts.title}}</h4>
+    </div>
+    <div class="inline infossecondaire">
+        <p>Post crée le : {{posts.created_at | date : "M/d/yy, h:mm" }} </p>
+    </div>
+
+    <div>
+        <p>{{posts.content}}</p>
+    </div>
+    <div class="inline">
+        <button class="btn" style="background-color:green" (click)="likeUp()">Like</button>
+        <button class="btn" style="background-color:red" (click)="likeDown()">Dislike</button>
+    </div>
+</li>
